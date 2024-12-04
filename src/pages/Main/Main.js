@@ -7,6 +7,7 @@ function Main() {
   const navigate = useNavigate();
   const handleLogout = () => {
     localStorage.removeItem('accessToken');
+    navigate('/');
   };
 
   useEffect(() => {
@@ -23,18 +24,15 @@ function Main() {
       <div className='container'>
         <div className='navigation'>
           <ul>
+            {/* <li>
+              <a href='/main/dashboard'>Dashboard</a>
+            </li> */}
             <li>
-              <a onClick={() => navigate('/')}>Movies</a>
+              <a href='/main/movies'>Movies</a>
             </li>
-            {accessToken ? (
-              <li className='logout'>
-                <a onClick={handleLogout}>Logout</a>
-              </li>
-            ) : (
-              <li className='login'>
-                <a onClick={() => alert('Go to Login page')}>Login</a>
-              </li>
-            )}
+            <li className='logout'>
+              <a onClick={handleLogout}>Logout</a>
+            </li>
           </ul>
         </div>
         <div className='outlet'>

@@ -1,0 +1,52 @@
+/* Header styling */
+h1 {
+    text-align: center; /* Centers the header text */
+    font-size: 28px; /* Larger font size for prominence */
+    color: #ffffff; /* Dark gray for readability */
+    margin-bottom: 20px; /* Spacing below the header */
+    font-weight: bold; /* Makes the text bold */
+    padding-right: 130px;
+
+  }
+  
+
+
+  .searched-movie {
+    max-height: 200px;
+    overflow-y: auto;
+  }
+  .search-container p:hover {
+    background-color: rgb(10, 10, 10);
+  }
+  
+  .poster-image {
+    width: 150px;
+    height: auto;
+    
+  }
+  
+  .container {
+    overflow: auto;
+    background: url('bgimage.jpg') no-repeat center center fixed;
+    background-size: cover;
+   
+  }
+  
+  nav {
+    margin-top: 2rem;
+    
+  }
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    
+  }
+  
+  nav li {
+    display: inline;
+    border: solid;
+    border-width: 1px 1px 0 1px;
+    margin: 0 5px 0 0;
+    
+  }

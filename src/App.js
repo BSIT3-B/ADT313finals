@@ -1,23 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import * as React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import './index.css';
+import Login from './pages/Public/Login/Login';
 import Main from './pages/Main/Main';
-import Home from './pages/Main/Movie/Home/Home';
-import MovieContextProvider from './context/MovieContext';
-import View from './pages/Main/Movie/View/View';
+import Register from './pages/Public/Login/Register'; // Import Register component
+import Movie from './pages/Main/Movie/Movie';
+import Lists from './pages/Main/Movie/Lists/Lists';
+import Form from './pages/Main/Movie/Form/Form';
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: '/',               // The root path points to the login page
+    element: <Login />,
+  },
+  {
+    path: '/Register',        // Add the Register page route
+    element: <Register />,
+  },
+  {
+    path: '/main',
     element: <Main />,
     children: [
+      //Temporarily disabled the dashboard route
+      // {
+      //   path: '/main/dashboard',
+      //   element: <Dashboard />,
+      // },
       {
-        path: '/',
-        element: <Home />,
-      },
-      {
-        path: '/view/:movieId?',
-        element: <View />,
+        path: '/main/movies',
+        element: <Movie />,
+        children: [
+          {
+            path: '/main/movies',
+            element: <Lists />,
+          },
+          {
+            path: '/main/movies/form/:movieId?',
+            element: <Form />,
+          },
+        ],
       },
     ],
   },
@@ -26,9 +47,7 @@ const router = createBrowserRouter([
 function App() {
   return (
     <div className='App'>
-      <MovieContextProvider>
-        <RouterProvider router={router} />
-      </MovieContextProvider>
+      <RouterProvider router={router} />
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import { useState, useRef, useCallback, useEffect } from 'react';
 import './Login.css';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useDebounce } from '../../../utils/hooks/useDebounce';
 import axios from 'axios';
 
@@ -14,7 +14,7 @@ function Login() {
   const userInputDebounce = useDebounce({ email, password }, 2000);
   const [debounceState, setDebounceState] = useState(false);
   const [status, setStatus] = useState('idle');
-  const [error, setError] = useState('');
+
   const navigate = useNavigate();
 
   const handleShowPassword = useCallback(() => {
@@ -28,7 +28,6 @@ function Login() {
     switch (type) {
       case 'email':
         setEmail(event.target.value);
-
         break;
 
       case 'password':
@@ -43,6 +42,7 @@ function Login() {
   const handleLogin = async () => {
     const data = { email, password };
     setStatus('loading');
+    console.log(data);
 
     await axios({
       method: 'post',
@@ -52,13 +52,11 @@ function Login() {
     })
       .then((res) => {
         console.log(res);
-        //store response access token to localstorage
         localStorage.setItem('accessToken', res.data.access_token);
         navigate('/main/movies');
         setStatus('idle');
       })
       .catch((e) => {
-        setError(e.response.data.message);
         console.log(e);
         setStatus('idle');
         // alert(e.response.data.message);
@@ -70,13 +68,13 @@ function Login() {
   }, [userInputDebounce]);
 
   return (
-    <div className='Login'>
+    <div
+      className='Register'
+    >
       <div className='main-container'>
+        <h3>Login</h3>
         <form>
           <div className='form-container'>
-            <h3>Login</h3>
-
-            {error && <span className='login errors'>{error}</span>}
             <div>
               <div className='form-group'>
                 <label>E-mail:</label>
@@ -87,7 +85,7 @@ function Login() {
                   onChange={(e) => handleOnChange(e, 'email')}
                 />
               </div>
-              {debounceState && isFieldsDirty && email == '' && (
+              {debounceState && isFieldsDirty && email === '' && (
                 <span className='errors'>This field is required</span>
               )}
             </div>
@@ -101,7 +99,7 @@ function Login() {
                   onChange={(e) => handleOnChange(e, 'password')}
                 />
               </div>
-              {debounceState && isFieldsDirty && password == '' && (
+              {debounceState && isFieldsDirty && password === '' && (
                 <span className='errors'>This field is required</span>
               )}
             </div>
@@ -118,14 +116,17 @@ function Login() {
                     return;
                   }
                   if (email && password) {
-                    handleLogin();
+                    handleLogin({
+                      type: 'login',
+                      user: { email, password },
+                    });
                   } else {
                     setIsFieldsDirty(true);
-                    if (email == '') {
+                    if (email === '') {
                       emailRef.current.focus();
                     }
 
-                    if (password == '') {
+                    if (password === '') {
                       passwordRef.current.focus();
                     }
                   }
@@ -134,10 +135,11 @@ function Login() {
                 {status === 'idle' ? 'Login' : 'Loading'}
               </button>
             </div>
+
             <div className='register-container'>
-              <a href='/register'>
+              <Link to='/register'>
                 <small>Register</small>
-              </a>
+              </Link>
             </div>
           </div>
         </form>
