@@ -11,14 +11,14 @@
 .Main .container .outlet {
   flex-grow: 3;
   padding: 1rem;
-  color: white; /* Ensure text is readable */
+  color: white; 
 }
 
 .Main .container .navigation {
-  background-color: rgb(0, 0, 0); /* Set background color to black */
+  background-color: rgb(0, 0, 0); 
   padding-top: 40px;
   height: 100vh;
-  color: white; /* Ensure text is readable */
+  color: white; 
 }
 
 .Main .container .navigation ul {
@@ -30,17 +30,17 @@
 
 .Main .container .navigation ul li {
   padding: 10px 80px 10px 20px;
-  color: white; /* Ensure list items are readable */
+  color: white; 
 }
 
 .Main .container .navigation ul li.active,
 .Main .container .navigation ul li:hover {
-  background: #444; /* Darker gray for hover and active state */
+  background: #444; 
 }
 
 .Main .container .navigation ul li a {
   text-decoration: none;
-  color: #ffae00; /* Ensure links are readable */
+  color: #ffae00; 
 }
 .Main .container .navigation ul li.logout {
   cursor: pointer;
@@ -48,6 +48,6 @@
 
 
 .Main .container .navigation ul li a:hover {
-  color: #ccc; /* Slightly lighter color for hover effect */
+  color: #ccc; 
 }
 

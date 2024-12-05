@@ -2,10 +2,11 @@
   width: 100%;
   display: flex;
   flex-direction: column;
- /* background: url('bgimage.jpg') no-repeat center center fixed; /* Add the background image */
-  background-size: cover; /* Make sure the background image covers the entire area */
-  background-color: rgba(0, 0, 0, 0.6); /* Add a black overlay with transparency */
+  background-size: cover; 
+  background-color: rgba(0, 0, 0, 0.6); 
   color: white;
+  min-height: 100vh; 
+  padding: 20px;
 }
 
 .create-container {
@@ -20,23 +21,9 @@
 
 .table-container {
   text-align: center;
+  overflow-x: auto;
 }
 
-
-
-
-
-/* Lists.css */
-
-/* Set the background color to black */
-.lists-container {
-  background-color: black;
-  color: rgb(255, 255, 255); /* Ensure text is readable */
-  min-height: 100vh; /* Make it cover the entire screen height */
-  padding: 20px;
-}
-
-/* Style the create button */
 .create-container button {
   background-color: #353535;
   color: #ffae00;
@@ -55,15 +42,12 @@
   color: black;
 }
 
-/* Style the table */
-.table-container {
-  overflow-x: auto;
-}
+
 
 .movie-lists {
   width: 100%;
   border-collapse: collapse;
-  background-color: #6e6e6d; /* Darker background for the table */
+  background-color: #6e6e6d; 
   color: rgb(0, 0, 0);
 }
 
@@ -86,7 +70,7 @@
   background-color: #444;
 }
 
-/* Style action buttons */
+
 .movie-lists button {
   background-color: #000000;
   color: #ffae00;

@@ -1,4 +1,3 @@
-/* Register.css */
 
 .form-containerr {
     display: flex;
@@ -13,9 +12,6 @@
     
   }
  
-  
-  
-  
   .form input {
     width: 100%;
     padding: 10px;
@@ -27,7 +23,6 @@
   .register-form button {
     width: 100%;
     padding: 10px;
-    background-color: #28a745;
     color: white;
     border: none;
     border-radius: 5px;
@@ -46,7 +41,7 @@
   }
   
 .form-group label {
-  margin-bottom: 0.5rem; /* Spacing below the label */
+  margin-bottom: 0.5rem; 
   font-size: 1rem;
-  color: black; /* Matches the theme */
+  color: black; 
 }

@@ -1,16 +1,13 @@
-/* Header styling */
+
 h1 {
-    text-align: center; /* Centers the header text */
-    font-size: 28px; /* Larger font size for prominence */
-    color: #ffae00; /* Dark gray for readability */
-    margin-bottom: 20px; /* Spacing below the header */
-    font-weight: bold; /* Makes the text bold */
+    text-align: center; 
+    font-size: 28px; 
+    color: #ffae00; 
+    margin-bottom: 20px; 
+    font-weight: bold; 
     padding-right: 130px;
 
   }
-  
-
-
   .searched-movie {
     max-height: 200px;
     overflow-y: auto;
@@ -27,7 +24,6 @@ h1 {
   
   .container {
     overflow: auto;
-   /* background: url('bgimage.jpg') no-repeat center center fixed; */
     background-size: cover;
    
   }
@@ -51,13 +47,6 @@ h1 {
     
   }
   
-
-
-
-
-
-
-  /* Style for the videos container */
 .videos {
   display: flex;
   flex-wrap: wrap;
@@ -66,12 +55,12 @@ h1 {
 }
 
 .video-item {
-  flex: 1 1 300px; /* Adjusts width dynamically */
+  flex: 1 1 300px; 
   max-width: 300px;
   text-align: center;
 }
 
-/* Style for the cast container */
+
 .cast {
   display: flex;
   flex-wrap: wrap;
@@ -80,7 +69,7 @@ h1 {
 }
 
 .cast-item {
-  flex: 1 1 150px; /* Adjusts width dynamically */
+  flex: 1 1 150px; 
   max-width: 150px;
   text-align: center;
 }

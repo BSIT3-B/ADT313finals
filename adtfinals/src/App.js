@@ -3,18 +3,18 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './index.css';
 import Login from './pages/Public/Login/Login';
 import Main from './pages/Main/Main';
-import Register from './pages/Public/Login/Register'; // Import Register component
+import Register from './pages/Public/Login/Register'; 
 import Movie from './pages/Main/Movie/Movie';
 import Lists from './pages/Main/Movie/Lists/Lists';
 import Form from './pages/Main/Movie/Form/Form';
 
 const router = createBrowserRouter([
   {
-    path: '/',               // The root path points to the login page
+    path: '/',               
     element: <Login />,
   },
   {
-    path: '/Register',        // Add the Register page route
+    path: '/Register',        
     element: <Register />,
   },
   {
