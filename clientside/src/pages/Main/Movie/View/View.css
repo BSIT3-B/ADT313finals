@@ -5,23 +5,18 @@
   padding: 20px;
   font-family: 'Arial', sans-serif;
 }
-
-/* Header section with poster and details */
 .View-header {
   display: flex;
   gap: 20px;
   align-items: flex-start;
   margin-bottom: 30px;
 }
-
-/* Poster styling */
 .View-poster {
   width: 300px;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
 }
 
-/* Movie details */
 .View-details {
   flex: 1;
 }
@@ -35,8 +30,6 @@
   font-size: 1.2rem;
   line-height: 1.6;
 }
-
-/* Sections (Cast, Videos, Photos) */
 .View-sections {
   margin-top: 20px;
 }
@@ -46,8 +39,6 @@
   color: #e50914;
   margin-bottom: 15px;
 }
-
-/* Responsive adjustments */
 @media (max-width: 768px) {
   .View-header {
     flex-direction: column;
